@@ -7,7 +7,7 @@
 #include <limits.h>
 #include <unistd.h>
 
-#define UNSED(x) (void)(x)
+#define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
 
 /* FLAGS */
@@ -25,7 +25,7 @@
 
 /**
  * struct format - match the conversion specifiers for printf
- * @id: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
+ * @format: the format
  * @f: type pointer to function for the conversion specifier
  *
  */
