@@ -2,8 +2,8 @@
 
 /****************** PRINT POINTER ******************/
 /**
- * printf_pointer - Prints the value of a pointer variable
- * @val: List a of arguments
+ * print_pointer - Prints the value of a pointer variable
+ * @types: List a of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
  * @width: get width
@@ -11,14 +11,14 @@
  * @size: Size specifier
  * Return: Number of chars printed.
  */
-int printf_pointer(va_list val, char buffer[],
+int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char extra_c = 0, padd = ' ';
 	int ind = BUFF_SIZE - 2, length = 2, padd_start = 1; /* length=2, for '0x' */
 	unsigned long num_addrs;
 	char map_to[] = "0123456789abcdef";
-	void *addrs = va_arg(val, void *);
+	void *addrs = va_arg(types, void *);
 
 	UNUSED(width);
 	UNUSED(size);
@@ -54,8 +54,8 @@ int printf_pointer(va_list val, char buffer[],
 
 /************************* PRINT NON PRINTABLE *************************/
 /**
- * printf_non_printable - Prints ascii codes in hexa of non printable chars
- * @val: Lista of arguments
+ * print_non_printable - Prints ascii codes in hexa of non printable chars
+ * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
  * @width: get width
@@ -63,11 +63,11 @@ int printf_pointer(va_list val, char buffer[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int printf_non_printable(va_list val, char buffer[],
+int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int i = 0, offset = 0;
-	char *str = va_arg(val, char *);
+	char *str = va_arg(types, char *);
 
 	UNUSED(flags);
 	UNUSED(width);
@@ -115,7 +115,7 @@ int print_reverse(va_list types, char buffer[],
 	UNUSED(width);
 	UNUSED(size);
 
-	str = va_arg(val, char *);
+	str = va_arg(types, char *);
 
 	if (str == NULL)
 	{
@@ -146,7 +146,7 @@ int print_reverse(va_list types, char buffer[],
  * @size: Size specifier
  * Return: Numbers of chars printed
  */
-int printf_rot13string(va_list val, char buffer[],
+int print_rot13string(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char x;
@@ -156,7 +156,7 @@ int printf_rot13string(va_list val, char buffer[],
 	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	str = va_arg(val, char *);
+	str = va_arg(types, char *);
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
