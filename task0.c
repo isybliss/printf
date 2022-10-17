@@ -3,7 +3,7 @@
 /************************* PRINT CHAR *************************/
 
 /**
- * print_char - Prints a char
+ * printf_char - Prints a char
  * @val: List a of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
@@ -21,7 +21,7 @@ int printf_char(va_list val, char buffer[],
 }
 /************************* PRINT A STRING *************************/
 /**
- * print_string - Prints a string
+ * printf_string - Prints a string
  * @val: List a of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
@@ -30,7 +30,7 @@ int printf_char(va_list val, char buffer[],
  * @size: Size specifier
  * Return: length of string printed
  */
-int print_string(va_list val, char buffer[],
+int printf_string(va_list val, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int length = 0, i;
@@ -76,7 +76,7 @@ int print_string(va_list val, char buffer[],
 }
 /************************* PRINT PERCENT SIGN *************************/
 /**
- * print_percent - Prints a percent sign
+ * printf_percent - Prints a percent sign
  * @val: List of a arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
@@ -85,7 +85,7 @@ int print_string(va_list val, char buffer[],
  * @size: Size specifier
  * Return: percent sign printed
  */
-int print_percent(va_list val, char buffer[],
+int printf_percent(va_list val, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	UNUSED(val);
