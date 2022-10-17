@@ -24,17 +24,25 @@
 
 
 /**
- * struct format - match the conversion specifiers for printf
- * @format: the format
- * @f: type pointer to function for the conversion specifier
+ * struct fmt - match the conversion specifiers for printf
+ * @fmt: the format
+ * @fn: type pointer to function for the conversion specifier
  *
  */
 
-typedef struct format
+struct fmt
 {
-	char format;
-	int (*f)(va_list, char[], int, int, int, int);
-} fmt_t;
+	char fmt;
+	int (*fn)(va_list, char[], int, int, int, int);
+};
+
+/**
+ * typedef struct fmt fmt_t - Struct op
+ *
+ * @fmt: The format.
+ * @fm_t: The function associated.
+ */
+typedef struct fmt fmt_t;
 
 int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,
