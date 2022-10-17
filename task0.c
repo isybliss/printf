@@ -36,11 +36,11 @@ int printf_string(va_list val, char buffer[],
 	int length = 0, i;
 	char *str = va_arg(val, char *);
 
-	UNUSED(buffer);
-	UNUSED(flags);
-	UNUSED(width);
-	UNUSED(precision);
-	UNUSED(size);
+	UNSED(buffer);
+	UNSED(flags);
+	UNSED(width);
+	UNSED(precision);
+	UNSED(size);
 	if (str == NULL)
 	{
 		str = "(null)";
@@ -88,11 +88,11 @@ int printf_string(va_list val, char buffer[],
 int printf_percent(va_list val, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	UNUSED(val);
-	UNUSED(buffer);
-	UNUSED(flags);
-	UNUSED(width);
-	UNUSED(precision);
-	UNUSED(size);
+	UNSED(val);
+	UNSED(buffer);
+	UNSED(flags);
+	UNSED(width);
+	UNSED(precision);
+	UNSED(size);
 	return (write(1, "%%", 1));
 }
